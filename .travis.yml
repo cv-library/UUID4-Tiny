@@ -3,4 +3,5 @@ perl:
   - '5.30'
   - '5.28'
   - '5.26'
+install: skip
 script: prove -l
