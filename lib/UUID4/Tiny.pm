@@ -18,7 +18,7 @@ our @EXPORT_OK = qw/
 our %EXPORT_TAGS = (all => \@EXPORT_OK);
 
 sub create_uuid {
-    my $call = syscall( 318, my $uuid = "\0" x 16, 16, 0 );
+    my $call = syscall( 318, my $uuid = "\0" x 16, 16, 0x0001 );
     croak "Syscall Error: $!" if $call == -1;
     croak 'Insufficient Bytes Copied' if $call < 16;
 
