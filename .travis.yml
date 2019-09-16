@@ -3,5 +3,11 @@ perl:
   - '5.30'
   - '5.28'
   - '5.26'
-install: skip
-script: prove -l
+before_install:
+  - curl -sL --compressed https://git.io/cpm -o ~/bin/cpm
+  - chmod +x ~/bin/cpm
+install:
+  - cpm install -g Dist::Zilla
+  - cpm install -g $(dzil authordeps --missing)
+script:
+  - dzil install
