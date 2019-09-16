@@ -1,4 +1,5 @@
 package UUID4::Tiny 0.001;
+# ABSTRACT: Cryptographically secure v4 UUIDs for Linux x64
 
 use strict;
 use warnings;
@@ -67,3 +68,86 @@ sub uuid_to_string {
 }
 
 1;
+
+__END__
+
+=encoding UTF-8
+
+=head1 SYNOPSIS
+
+ use UUID4::Tiny qw/
+    create_uuid
+    create_uuid_string
+    is_uuid_string
+    is_uuid4_string
+    string_to_uuid
+    uuid_to_string
+    /;
+
+ my $uuid        = create_uuid;
+ my $uuid_string = create_uuid_string;
+
+ $uuid        = string_to_uuid $uuid_string;
+ $uuid_string = uuid_to_string $uuid;
+
+ if ( is_uuid4_string $uuid_string ) { ... }
+
+=head1 DESCRIPTION
+
+Uses the Linux getrandom() system call to generate a version 4 UUID.
+
+Requires Linux kernel 3.17 or newer for getrandom().
+
+=head1 FUNCTIONS
+
+=head2 create_uuid
+
+    my $uuid = create_uuid;
+
+Gets a series of 16 random bytes via the getrandom() system call
+and sets the UUID4 version and variant on those bytes.
+
+=head2 uuid_to_string
+
+    my $uuid_string = uuid_to_string( create_uuid );
+
+Converts a 16 byte UUID to a canonical 8-4-4-4-12 format UUID string.
+
+=head2 create_uuid_string
+
+    my $uuid_string = create_uuid_string;
+
+Shortcut for uuid_to_string called on create_uuid.
+
+=head2 string_to_uuid
+
+    my $uuid = string_to_uuid( $uuid_string );
+
+Converts a canonical 8-4-4-4-12 format UUID string to a 16 byte UUID.
+
+=head2 is_uuid_string
+
+    if ( is_uuid_string( $input ) ) { ... }
+
+Checks if the input matches the canonical 8-4-4-4-12 format.
+
+=head2 is_uuid4_string
+
+    if ( is_uuid4_string( $input ) ) { ... }
+
+Similar to is_uuid_string, additionaly checking that the
+variant and version are correct for UUID v4.
+
+=head1 SEE ALSO
+
+=over 4
+
+=item *
+
+L<UUID::URandom>
+
+=item *
+
+L<UUID::Tiny>
+
+=back

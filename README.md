@@ -2,6 +2,10 @@
 
 UUID4::Tiny - Cryptographically secure v4 UUIDs for Linux x64
 
+# VERSION
+
+version 0.001
+
 # SYNOPSIS
 
     use UUID4::Tiny qw/
@@ -66,3 +70,19 @@ Checks if the input matches the canonical 8-4-4-4-12 format.
 
 Similar to is\_uuid\_string, additionaly checking that the
 variant and version are correct for UUID v4.
+
+# SEE ALSO
+
+- [UUID::URandom](https://metacpan.org/pod/UUID::URandom)
+- [UUID::Tiny](https://metacpan.org/pod/UUID::Tiny)
+
+# AUTHOR
+
+CV-Library <cvlibrary@cpan.org>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2019 by CV-Library.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
