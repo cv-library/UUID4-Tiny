@@ -9,4 +9,4 @@ before_install:
 install:
   - cpm install -g $(dzil authordeps --missing)
 script:
-  - dzil install
+  - dzil test
