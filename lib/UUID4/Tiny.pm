@@ -144,10 +144,10 @@ variant and version are correct for UUID v4.
 
 =item *
 
-L<UUID::URandom>
+L<UUID::URandom> - A portable UUID v4 generator using L<Crypt::URandom>.
 
 =item *
 
-L<UUID::Tiny>
+L<UUID::Tiny> - Creates version 1, 3, 4 and 5 UUIDs (not cryptographically strong due to rand() usage).
 
 =back

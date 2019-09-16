@@ -73,8 +73,8 @@ variant and version are correct for UUID v4.
 
 # SEE ALSO
 
-- [UUID::URandom](https://metacpan.org/pod/UUID::URandom)
-- [UUID::Tiny](https://metacpan.org/pod/UUID::Tiny)
+- [UUID::URandom](https://metacpan.org/pod/UUID::URandom) - A portable UUID v4 generator using [Crypt::URandom](https://metacpan.org/pod/Crypt::URandom).
+- [UUID::Tiny](https://metacpan.org/pod/UUID::Tiny) - Creates version 1, 3, 4 and 5 UUIDs (not cryptographically strong due to rand() usage).
 
 # AUTHOR
 
