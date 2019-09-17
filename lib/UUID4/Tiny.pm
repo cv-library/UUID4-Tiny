@@ -1,8 +1,10 @@
-package UUID4::Tiny 0.001;
+package UUID4::Tiny;
 # ABSTRACT: Cryptographically secure v4 UUIDs for Linux x64
 
 use strict;
 use warnings;
+
+our $VERSION = '0.001';
 
 use Carp qw/carp croak/;
 use Exporter qw/import/;
