@@ -107,7 +107,8 @@ Requires Linux kernel 3.17 or newer for getrandom().
     my $uuid = create_uuid;
 
 Gets a series of 16 random bytes via the getrandom() system call
-and sets the UUID4 version and variant on those bytes.
+and sets the UUID4 version and variant on those bytes. Dies with
+a message containing the errno if the call to getrandom() fails.
 
 =head2 uuid_to_string
 
