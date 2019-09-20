@@ -57,7 +57,7 @@ sub string_to_uuid {
         carp 'Input not converted: assumed to be UUID bytes';
         return $string;
     }
-    (my $hex = $string) =~ s/-//g;
+    (my $hex = $string) =~ y/-//d;
     pack 'H*', $hex;
 }
 
