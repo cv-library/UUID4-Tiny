@@ -4,7 +4,7 @@ UUID4::Tiny - Cryptographically secure v4 UUIDs for Linux x64
 
 # VERSION
 
-version 0.001
+version 0.002
 
 # SYNOPSIS
 
