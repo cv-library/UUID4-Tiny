@@ -1,3 +1,5 @@
+[![Test](https://github.com/cv-library/UUID4-Tiny/actions/workflows/test.yml/badge.svg)](https://github.com/cv-library/UUID4-Tiny/actions/workflows/test.yml)
+
 # NAME
 
 UUID4::Tiny - Cryptographically secure v4 UUIDs for Linux x64
