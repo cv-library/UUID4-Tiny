@@ -6,7 +6,7 @@ UUID4::Tiny - Cryptographically secure v4 UUIDs for Linux x64
 
 # VERSION
 
-version 0.002
+version 0.003
 
 # SYNOPSIS
 
@@ -49,6 +49,14 @@ a message containing the errno if the call to getrandom() fails.
 
 Converts a 16 byte UUID to a canonical 8-4-4-4-12 format UUID string.
 
+Calling this function on a string that is already a UUID string will return the
+string unmodified, and raise a warning.
+
+Calling this function on a reference is almost certainly not what you want, as
+the function would naively try to unpack the stringified reference, e.g.
+`ARRAY(0xdeadbeef1234)`, into a UUID string. For this reason, the function
+will croak if its input is a reference.
+
 ## create\_uuid\_string
 
     my $uuid_string = create_uuid_string;
@@ -76,8 +84,8 @@ variant and version are correct for UUID v4.
 
 # SEE ALSO
 
-- [UUID::URandom](https://metacpan.org/pod/UUID::URandom) - A portable UUID v4 generator using [Crypt::URandom](https://metacpan.org/pod/Crypt::URandom).
-- [UUID::Tiny](https://metacpan.org/pod/UUID::Tiny) - Creates version 1, 3, 4 and 5 UUIDs (not cryptographically strong due to rand() usage).
+- [UUID::URandom](https://metacpan.org/pod/UUID%3A%3AURandom) - A portable UUID v4 generator using [Crypt::URandom](https://metacpan.org/pod/Crypt%3A%3AURandom).
+- [UUID::Tiny](https://metacpan.org/pod/UUID%3A%3ATiny) - Creates version 1, 3, 4 and 5 UUIDs (not cryptographically strong due to rand() usage).
 
 # AUTHOR
 
