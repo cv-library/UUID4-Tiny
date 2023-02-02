@@ -157,3 +157,6 @@ L<UUID::URandom> - A portable UUID v4 generator using L<Crypt::URandom>.
 L<UUID::Tiny> - Creates version 1, 3, 4 and 5 UUIDs (not cryptographically strong due to rand() usage).
 
 =back
+
+=for :status
+=for markdown [![Test](https://github.com/cv-library/UUID4-Tiny/actions/workflows/test.yml/badge.svg)](https://github.com/cv-library/UUID4-Tiny/actions/workflows/test.yml)
